@@ -1,9 +1,7 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Auto {
-
     public State state;
     private static final Random r = new Random();
     private int num;
@@ -15,7 +13,6 @@ public class Auto {
 
     public Auto() {
     }
-
 
     public static void carNum(List<Auto> car){
         for (int i = 0; i < 200 ; i++) {
@@ -44,7 +41,6 @@ public class Auto {
         for (int i = 0; i < 200 ; i++) {
             if (State.INPARKING == autos.get(i).state) {
                 parking.add(autos.get(i));
-//                System.out.println();
             }
         }
     }

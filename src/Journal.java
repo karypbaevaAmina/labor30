@@ -1,12 +1,12 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class Journal {
-
     public int time;
-    public int [] autoNum = new int[20];
+    public int autoNum;
 
-    public Journal(int time, int[] autoNum) {
+    public Journal(int time, int autoNum) {
         this.time = time;
         this.autoNum = autoNum;
     }
@@ -21,11 +21,16 @@ public class Journal {
     }
 
 
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
