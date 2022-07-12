@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -5,9 +6,6 @@ public class Auto {
 
     public State state;
     private static final Random r = new Random();
-
-    private static final List<String> autoNames = List.of("KIA", "Mercedes", "Honda", "Toyota", "Lexus", "Ford", "BMW", "Jeep");
-
     private int num;
 
     public Auto(int num) {
@@ -15,13 +13,18 @@ public class Auto {
         state = State.ONTHEWAY;
     }
 
-    public static void carNum(List<Auto> cars){
+    public Auto() {
+    }
+
+
+    public static void carNum(List<Auto> car){
         for (int i = 0; i < 200 ; i++) {
-            cars.add(new Auto( r.nextInt(1005, 5030)));
+            car.add(new Auto( r.nextInt(1005, 5030)));
             System.out.println();
         }
     }
-    public void  changeState(){
+
+    public void changeState(){
         Random r = new Random();
         if ( r.nextInt(100) <3){
             state = State.ONTHEWAY;
@@ -31,7 +34,29 @@ public class Auto {
         }
     }
 
+    public static void changeStateCar(List<Auto> autos) {
+        for (int i = 0; i <200 ; i++) {
+            autos.get(i).changeState();
+        }
+    }
 
+    public static void carInParking(List<Auto> autos, List<Auto> parking){
+        for (int i = 0; i < 200 ; i++) {
+            if (State.INPARKING == autos.get(i).state) {
+                parking.add(autos.get(i));
+//                System.out.println();
+            }
+        }
+    }
 
+    @Override
+    public String toString() {
+        return "Auto{" +
+                "state=" + state +
+                ", num=" + num +
+                '}';
+    }
 
 }
+
+
